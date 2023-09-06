@@ -1,0 +1,41 @@
+.navTab__list {
+  margin: 0;
+  padding: 0 0 17px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+}
+
+.navTab__link {
+  padding: 5px;
+  display: block;
+  width: 82px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 16px;
+  text-decoration: none;
+  text-align: center;
+  background-color: #303030;
+  border-radius: 6px;
+  transition: color .2s ease-out;
+}
+
+.navTab__link:hover {
+  color: #8B8B8B;
+}
+
+@media screen and (min-width: 768px) {
+  .navTab__link {
+    padding: 10px 14px;
+    width: 96px;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 10px;
+  }
+
+  .navTab__list {
+    padding-bottom: 30px;
+  }
+}

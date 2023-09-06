@@ -1,0 +1,20 @@
+.page {
+  display: grid;
+}
+
+.page_full-heigth {
+  height: 100vh;
+  grid-template-rows: auto 1fr;
+}
+  
+.page_full-heigth-1row {
+  height: 100vh;
+  grid-template-rows: 1fr;
+}
+  
+@media screen and (min-width: 1280px) {
+  .page {
+    min-height: 100%;
+    grid-template-columns: minmax(20px, 1fr) 1140px minmax(20px, 1fr);
+  }
+}

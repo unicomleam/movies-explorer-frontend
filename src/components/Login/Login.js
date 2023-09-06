@@ -1,0 +1,36 @@
+import Header from "../Header/Header";
+import { Link } from 'react-router-dom';
+
+function Login() {
+  return (
+    <div className="page page_full-heigth-1row">
+      <section className="login-form">
+        <Header theme={{ default: true }} />
+        <h2 className="login-form__title">Рады видеть!</h2>
+
+        <form className="login-form__form">
+          <div className="login-form__input-row">
+            <label className="login-form__input-label">E-mail</label>
+            <input type="email" className="login-form__input" required />
+          </div>
+
+          <div className="login-form__input-row">
+            <label className="login-form__input-label">Пароль</label>
+            <input type="password" className="login-form__input" required />
+          </div>
+        </form>
+
+        <div className="login-form__wrapper">
+          <button type="submit" className="login-form__submit-btn">Войти</button>
+          <div className="login-form__transition">
+            <p className="login-form__transition-text">Ещё не зарегистрированы?</p>
+            <Link to='/signup' className="login-form__transition-link">Регистрация</Link>
+          </div>
+        </div>
+      </section>
+      
+    </div>
+  )
+}
+
+export default Login;
