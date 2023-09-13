@@ -20,8 +20,10 @@ function Movies() {
   return(
     <div className="page">
       <Header theme={{ default: false }} />
-      <SearchForm />
-      <MoviesCardList cardList={cards} typeCardBtn={{save: true}} />
+      <main className="main">
+        <SearchForm />
+        <MoviesCardList cardList={cards} typeCardBtn={{save: true}} />
+      </main>
       <Footer />
     </div>
   )

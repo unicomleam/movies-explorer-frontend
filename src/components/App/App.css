@@ -2,6 +2,10 @@
   display: grid;
 }
 
+.main {
+  display: block;
+}
+
 .page_full-heigth {
   height: 100vh;
   grid-template-rows: auto 1fr;
@@ -16,5 +20,10 @@
   .page {
     min-height: 100%;
     grid-template-columns: minmax(20px, 1fr) 1140px minmax(20px, 1fr);
+  }
+
+  .main {
+    margin: 0;
+    grid-column: 2/3;
   }
 }

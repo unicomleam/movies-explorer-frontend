@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Login() {
   return (
-    <div className="page page_full-heigth-1row">
+    <main className="page page_full-heigth-1row">
       <section className="login-form">
         <Header theme={{ default: true }} />
         <h2 className="login-form__title">Рады видеть!</h2>
@@ -11,12 +11,24 @@ function Login() {
         <form className="login-form__form">
           <div className="login-form__input-row">
             <label className="login-form__input-label">E-mail</label>
-            <input type="email" className="login-form__input" required />
+            <input type="email"
+              className="login-form__input"
+              id='login__input_email'
+              name='email'
+              placeholder='Введите email'
+              required/>
           </div>
 
           <div className="login-form__input-row">
             <label className="login-form__input-label">Пароль</label>
-            <input type="password" className="login-form__input" required />
+            <input type="password"
+              name="password"
+              id='login__input_password'
+              className="login-form__input"
+              minLength={4}
+              maxLength={24}
+              placeholder='Введите пароль'
+              required/>
           </div>
         </form>
 
@@ -29,7 +41,7 @@ function Login() {
         </div>
       </section>
       
-    </div>
+    </main>
   )
 }
 

@@ -22,7 +22,7 @@ function Profile() {
     <div className="page page_full-heigth">
       <Header theme={{ default: false }} />
 
-      <section className="profile">
+      <main className="profile">
         <h2 className="profile__title">{`Привет, ${name}!`}</h2>
         <form id="profile__form" className="profile__form" onSubmit={handleSubmit}>
           <label className="profile__input-container">
@@ -36,7 +36,6 @@ function Profile() {
               value={name}
               minLength={2}
               maxLength={30}
-              required={true}
               onChange={handleChange}/>
           </label>
           <span className="profile__divider"/>
@@ -49,7 +48,6 @@ function Profile() {
               id="profile-input-name"
               className="profile__input"
               value={email}
-              required={true}
               onChange={handleChange}/>
           </label>
         </form>
@@ -57,7 +55,7 @@ function Profile() {
           <button type="submit" form="profile__form" className="profile__btn-submit">Редактировать</button>
           <button className="profile__btn-exit" onClick={handleLogout}>Выйти из аккаунта</button>
         </div>
-      </section>
+      </main>
     </div>
   )
 }

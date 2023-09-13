@@ -21,8 +21,10 @@ function SavedMovies() {
   return (
     <div className="page">
       <Header theme={{ default: false }} />
-      <SearchForm />
-      <MoviesCardList cardList={saveCards} typeCardBtn={{save: false}} />
+      <main className="main">
+        <SearchForm />
+        <MoviesCardList cardList={saveCards} typeCardBtn={{save: false}} />
+      </main>
       <Footer />
     </div>
   )

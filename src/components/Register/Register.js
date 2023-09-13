@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Register() {
   return (
-    <div className="page page_full-heigth-1row">
+    <main className="page page_full-heigth-1row">
       <section className="register-form">
         <Header theme={{ default: true }} />
         <h2 className="register-form__title">Добро пожаловать!</h2>
@@ -11,17 +11,36 @@ function Register() {
         <form className="register-form__form">
           <div className="register-form__input-row">
             <label className="register-form__input-label">Имя</label>
-            <input type="text" className="register-form__input" required />
+            <input type="text"
+              className="register-form__input"
+              id="register__input_name"
+              name="name"
+              minLength={2}
+              maxLength={24}
+              placeholder="Введите имя"
+              required />
           </div>
 
           <div className="register-form__input-row">
             <label className="register-form__input-label">E-mail</label>
-            <input type="email" className="register-form__input" required />
+            <input type="email"
+              className="register-form__input"
+              id="register__input_email"
+              name="email"
+              placeholder="Введите пароль"
+              required/>
           </div>
 
           <div className="register-form__input-row">
             <label className="register-form__input-label">Пароль</label>
-            <input type="password" className="register-form__input" required />
+            <input type="password"
+              className="register-form__input"
+              id="register__input_password"
+              name="password"
+              minLength={4}
+              maxLength={24}
+              placeholder="Введите email"
+              required />
           </div>
         </form>
 
@@ -34,7 +53,7 @@ function Register() {
         </div>
       </section>
       
-    </div>
+    </main>
   )
 }
 

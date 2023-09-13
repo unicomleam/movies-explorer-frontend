@@ -11,11 +11,13 @@ function Main() {
     <>
       <div className='page'>
         <Header theme={{ default: false }} />
-        <Promo />
-        <AboutProject />
-        <Techs />
-        <AboutMe />
-        <Portfolio />
+        <main className="main">
+          <Promo />
+          <AboutProject />
+          <Techs />
+          <AboutMe />
+          <Portfolio />
+        </main>
         <Footer />
       </div>
     </>

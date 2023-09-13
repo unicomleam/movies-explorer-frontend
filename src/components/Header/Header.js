@@ -23,16 +23,11 @@ function Header({ theme }) {
               <div
                 className={`header__burger-inner ${openBurger ? 'header__burger-inner_active' : ''}`}/>
             </button>
-            <Navigation
-              isOpenBurger={openBurger}/>
+            <Navigation isOpenBurger={openBurger}/>
           </div>
         : <div className="header__entrance">
-            <Link to="/signup" className="header__link">
-              Регистрация
-            </Link>
-            <Link to="/signin" className="header__button">
-              Войти
-            </Link>
+            <Link to="/signup" className="header__link">Регистрация</Link>
+            <Link to="/signin" className="header__button">Войти</Link>
           </div>
         )
       }
