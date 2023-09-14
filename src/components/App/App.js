@@ -16,6 +16,18 @@ function App() {
     loggeIn: true,
   });
 
+  function logout() {
+    setCurrentUser({ loggeIn: false });
+  }
+
+  function login() {
+    setCurrentUser({
+      name: 'unicomleam',
+      email: 'test@mail.ru',
+      loggeIn: true
+    });
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <Routes>
@@ -25,9 +37,9 @@ function App() {
 
         <Route path='/saved-movies' element={<SavedMovies/>} />
 
-        <Route path='/profile' element={<Profile/>} />
+        <Route path='/profile' element={<Profile logout={logout} />} />
 
-        <Route path='/signin' element={<Login/>} />
+        <Route path='/signin' element={<Login login={login} />} />
 
         <Route path='/signup' element={<Register/>} />
 

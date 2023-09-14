@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import Header from '../Header/Header';
+import { Link } from "react-router-dom";
 
-function Profile() {
+function Profile({ logout }) {
   const { name, email } = useContext(CurrentUserContext);
 
   function handleSubmit(e) {
@@ -12,10 +13,6 @@ function Profile() {
 
   function handleChange() {
     console.log('yes change');
-  }
-
-  function handleLogout() {
-    console.log('yes logout');
   }
 
   return (
@@ -29,7 +26,7 @@ function Profile() {
             <span className="profile__input-label">Имя</span>
             <input
               type="text"
-              placeholder="Имя"
+              placeholder="Введите имя"
               name="profile-input-name"
               id="profile-input-name"
               className="profile__input"
@@ -43,7 +40,7 @@ function Profile() {
             <span className="profile__input-label">E-mail</span>
             <input
               type="email"
-              placeholder="Почта"
+              placeholder="Введите почту"
               name="profile-input-name"
               id="profile-input-name"
               className="profile__input"
@@ -53,7 +50,10 @@ function Profile() {
         </form>
         <div className="profile__wrapper">
           <button type="submit" form="profile__form" className="profile__btn-submit">Редактировать</button>
-          <button className="profile__btn-exit" onClick={handleLogout}>Выйти из аккаунта</button>
+          
+          <Link className='link' to={"/"}>
+            <button className="profile__btn-exit" onClick={logout}>Выйти из аккаунта</button>
+          </Link>
         </div>
       </main>
     </div>

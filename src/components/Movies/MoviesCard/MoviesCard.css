@@ -1,21 +1,20 @@
 .card {
   box-sizing: border-box;
-  background-color: #222222;
-  border-radius: 6px;
 }
 
 .card__header {
-  padding: 14px;
+  padding: 10px 0 0;
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
 
 .card__title {
+  max-width: 250px;
   margin: 0;
   padding: 0;
   font-size: 12px;
-  line-height: 18px;
+  line-height: 15px;
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
@@ -23,43 +22,61 @@
 }
 
 .card__duration {
+  display: flex;
+  align-items: center;
+	justify-content: center;
   margin: 0;
-  padding: 0;
-  font-size: 10px;
-  line-height: 18px;
+  width: 52px;
+	height: 18px;
+  font-size: 11px;
+	line-height: 10px;
   font-weight: 400;
   color: #8B8B8B;
-  flex-shrink: 0;
+  background-color: #2F2F2F;
 }
 
-.card__img {
+.card__image {
   width: 100%;
   height: 168px;
-  object-fit: contain;
+  border-radius: 6px;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.card__image_container {
+  position: relative;
 }
 
 .card__btn {
-  display: block;
-  margin: 14px auto;
+  display: none;
+  position: absolute;
+  top: 14px;
+	right: 14px;
+
   padding: 0;
-  width: 100px;
-  height: 29px;
-  font-size: 12px;
-  line-height: 11px;
+
+  width: 72px;
+  height: 21px;
+  font-size: 11px;
+  line-height: 10px;
   font-weight: 400;
+
   color: #fff;
+
   border: none;
-  border-radius: 30px;
+  border-radius: 10.5px;
   background-color: #313131;
   cursor: pointer;
-  transition: color .2s ease-out;
 }
 
-.card__btn:hover {
-  color: #8B8B8B;
+.card__image_container:hover .card__btn {
+	display: block;
 }
 
 .card__btn_type_delete {
+  background-color: #313131;
+  width: 22px;
+	height: 21px;
   background-image: url('../../../images/movie/icon-delete.svg');
   background-size: 8px 8px;
   background-repeat: no-repeat;
@@ -68,43 +85,44 @@
 }
 
 .card__btn_type_delete:hover {
-  background-size: 12px 12px;
+  background-size: 10px 10px;
 }
 
 .card__btn_saved {
   background-color: #EE3465;
   background-image: url('../../../images/movie/icon-save.svg');
-  background-size: 10px 10px;
+  width: 22px;
+	height: 21px;
   background-repeat: no-repeat;
   background-position: center;
-  transition: all .2s ease-out;
+  transition: background-size .2s ease-out;
 }
 
 .card__btn_saved:hover {
-  background-image: url('../../../images/movie/icon-delete.svg');
-  background-color: #313131;
+  background-size: 10px 10px;
 }
 
 @media screen and (min-width: 768px) {
   .card__header {
-    padding: 18px;
+    padding: 12px 14px 0;
   }
 
   .card__title {
-    font-size: 15px;
+    font-size: 13px;
+    line-height: 16px;
   }
 
   .card__duration {
     font-size: 13px;
   }
 
-  .card__img {
+  .card__image {
     height: 190px;
   }
+}
 
-  .card__btn {
-    margin: 18px auto;
-    font-size: 12px;
-    line-height: 11px;
+@media screen and (min-width: 1280px) {
+  .card__image {
+    height: 201px;
   }
 }

@@ -99,7 +99,7 @@
 .header__entrance {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 30px;
 }
 
 .header__link {
@@ -159,7 +159,9 @@
 
 @media screen and (min-width: 1280px) {
   .header {
-    padding: 18px 0;
+    min-width: 1140px;
+    margin: 18px auto 0;
+    padding: 0;
     grid-column: 2/3;
   }
 }

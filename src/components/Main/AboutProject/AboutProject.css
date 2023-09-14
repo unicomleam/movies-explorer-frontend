@@ -1,5 +1,6 @@
 .aboutProject {
   margin: 70px 18px 0 18px;
+  max-width: 1140px;
 }
 
 .aboutProject__list {
@@ -126,7 +127,7 @@
 
 @media screen and (min-width: 1280px) {
   .aboutProject {
-    margin: 110px 0;
+    margin: 110px auto 111px;
     grid-column: 2/3;
   }
 

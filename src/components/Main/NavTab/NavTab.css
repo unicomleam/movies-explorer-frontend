@@ -28,7 +28,7 @@
 
 @media screen and (min-width: 768px) {
   .navTab__link {
-    padding: 10px 14px;
+    padding: 10px 0;
     width: 96px;
     font-size: 12px;
     line-height: 16px;
@@ -37,5 +37,6 @@
 
   .navTab__list {
     padding-bottom: 30px;
+    gap: 10px;
   }
 }
