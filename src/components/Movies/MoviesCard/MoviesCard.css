@@ -25,6 +25,7 @@
   display: flex;
   align-items: center;
 	justify-content: center;
+  border-radius: 3px;
   margin: 0;
   width: 52px;
 	height: 18px;
@@ -110,10 +111,6 @@
   .card__title {
     font-size: 13px;
     line-height: 16px;
-  }
-
-  .card__duration {
-    font-size: 13px;
   }
 
   .card__image {

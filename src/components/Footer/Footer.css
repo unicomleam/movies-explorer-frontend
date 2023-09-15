@@ -1,19 +1,19 @@
 .footer {
-  margin: 0 10px 20px 10px;
+  margin: 0px 10px 20px 10px;
 }
 
 .footer__description {
-  margin: 0;
+  margin-top: -8px;
   position: relative;
-  font-size: 13px;
-  line-height: 59px;
+  font-size: 12px;
+  line-height: 14.5px;
   font-weight: 400;
   color: #8B8B8B;
   text-align: center;
 }
 
 .footer__container {
-  padding: 30px 0 0 0;
+  padding: 40px 0 0 0;
   display: flex;
   flex-direction: column;
 }
@@ -42,7 +42,7 @@
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -21px;
   height: 1px;
   width: 100%;
   background-color: #424242;
@@ -64,13 +64,18 @@
 
 @media screen and (min-width: 768px) {
   .footer {
-    margin: 0 20px 20px 20px;
+    margin: -24px 30px 20px;
   }
 
   .footer__description {
     font-size: 13px;
     line-height: 58px;
     user-select: none;
+  }
+
+  .footer__description::after {
+    left: 0;
+    bottom: 0;
   }
 
   .footer__container {

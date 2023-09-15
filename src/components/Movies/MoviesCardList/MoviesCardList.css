@@ -1,5 +1,6 @@
 .movies-card {
   margin: 50px 10px 80px 10px;
+  max-width: 1140px;
 }
 
 .movies-card__list {
@@ -27,8 +28,8 @@
   line-height: 15px;
   font-weight: 500;
   color: #fff;
-  background-color: #2F2F2F;
-  border: none;
+  background-color: transparent;
+  border: 1px solid #424242;
   border-radius: 6px;
   cursor: pointer;
   transition: color .2s ease-out;
@@ -57,7 +58,7 @@
 
 @media screen and (min-width: 1280px) {
   .movies-card {
-    margin: 80px 0;
+    margin: 80px auto 0;
     grid-column: 2/3;
   }
 

@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 18px;
+  padding: 18px 15px;
 }
 
 .header__logo {
@@ -54,8 +54,8 @@
 
 .header__burger-inner {
   position: absolute;
-  top: 9px;
-  left: 0;
+  top: 10px;
+  left: -9px;
   height: 3px;
   width: 22px;
   background-color: #fff;
@@ -133,11 +133,28 @@
 
 @media screen and (min-width: 768px) {
   .header {
-    padding: 21px 30px;
+    padding: 16px 30px;
   }
 
   .header__link {
     font-size: 12px;
+  }
+
+  .header__burger {
+    width: 44px;
+    height: 44px;
+  }
+
+  .header__burger-inner {
+    width: 28px;
+    height: 3px;
+    top: 46%;
+    left: 20%;
+  }
+
+  .header__burger-inner::before {
+    width: 28px;
+    height: 3px;
   }
 
   .header__button {
