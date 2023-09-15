@@ -6,7 +6,7 @@ function Register() {
     <main className="page page_full-heigth-1row">
       <section className="register-form">
         <Header theme={{ default: true }} />
-        <h2 className="register-form__title">Добро пожаловать!</h2>
+        <h1 className="register-form__title">Добро пожаловать!</h1>
 
         <form className="register-form__form">
           <div className="register-form__input-row">

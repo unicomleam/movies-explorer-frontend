@@ -6,7 +6,7 @@ function Login({ login }) {
     <main className="page page_full-heigth-1row">
       <section className="login-form">
         <Header theme={{ default: true }} />
-        <h2 className="login-form__title">Рады видеть!</h2>
+        <h1 className="login-form__title">Рады видеть!</h1>
 
         <form className="login-form__form">
           <div className="login-form__input-row">

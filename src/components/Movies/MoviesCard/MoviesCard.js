@@ -11,6 +11,7 @@ function MoviesCard({ movieId, image, name, typeCardBtn }) {
           <img src={image} alt={name} className="card__image" />
         </Link>
         <button
+          type='button'
           className={`card__btn ${
             !typeCardBtn.save
               ? 'card__btn_type_delete'

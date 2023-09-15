@@ -18,7 +18,7 @@ function MoviesCardList({ cardList, typeCardBtn }) {
       </ul>
       {cardList.length > 3 &&
         <div className="movies-card__more">
-          <button className="movies-card__more-btn">Ещё</button>
+          <button type='button' className="movies-card__more-btn">Ещё</button>
         </div>
       }
     </section>

@@ -20,7 +20,7 @@ function Profile({ logout }) {
       <Header theme={{ default: false }} />
 
       <section className="profile">
-        <h2 className="profile__title">{`Привет, ${name}!`}</h2>
+        <h1 className="profile__title">{`Привет, ${name}!`}</h1>
         <form id="profile__form" className="profile__form" onSubmit={handleSubmit}>
           <label className="profile__input-container">
             <span className="profile__input-label">Имя</span>
@@ -52,7 +52,7 @@ function Profile({ logout }) {
           <button type="submit" form="profile__form" className="profile__btn-submit">Редактировать</button>
           
           <Link className='link' to={"/"}>
-            <button className="profile__btn-exit" onClick={logout}>Выйти из аккаунта</button>
+            <button type='button' className="profile__btn-exit" onClick={logout}>Выйти из аккаунта</button>
           </Link>
         </div>
       </section>

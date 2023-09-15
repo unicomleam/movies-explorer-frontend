@@ -18,6 +18,7 @@ function Header({ theme }) {
         ? <div>
             <div className={`header__overlay ${openBurger ? 'header__overlay_active' : ''}`}/>
             <button
+              type='button'
               className="header__burger"
               onClick={handleToggleBurger}>
               <div

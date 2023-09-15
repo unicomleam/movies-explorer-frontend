@@ -10,7 +10,7 @@ function SearchForm() {
             minLength={2}
             maxLength={24}
             required />
-          <button className="search-form__submit-btn" />
+          <button type='button' className="search-form__submit-btn" />
         </label>
 
         <label className="search-form__filter">
