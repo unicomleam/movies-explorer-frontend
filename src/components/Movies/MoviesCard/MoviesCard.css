@@ -3,7 +3,7 @@
 }
 
 .card__header {
-  padding: 10px 0 0;
+  padding: 13px 0 0;
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -49,7 +49,6 @@
 }
 
 .card__btn {
-  display: none;
   position: absolute;
   top: 14px;
 	right: 14px;
@@ -68,10 +67,6 @@
   border-radius: 10.5px;
   background-color: #313131;
   cursor: pointer;
-}
-
-.card__image_container:hover .card__btn {
-	display: block;
 }
 
 .card__btn_type_delete {
@@ -105,7 +100,7 @@
 
 @media screen and (min-width: 768px) {
   .card__header {
-    padding: 12px 14px 0;
+    padding: 23px 0px 0;
   }
 
   .card__title {
@@ -115,6 +110,14 @@
 
   .card__image {
     height: 190px;
+  }
+
+  .card__btn {
+    display: none;
+  }
+
+  .card__image_container:hover .card__btn {
+    display: block;
   }
 }
 

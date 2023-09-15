@@ -19,7 +19,7 @@ function Profile({ logout }) {
     <div className="page page_full-heigth">
       <Header theme={{ default: false }} />
 
-      <main className="profile">
+      <section className="profile">
         <h2 className="profile__title">{`Привет, ${name}!`}</h2>
         <form id="profile__form" className="profile__form" onSubmit={handleSubmit}>
           <label className="profile__input-container">
@@ -55,7 +55,7 @@ function Profile({ logout }) {
             <button className="profile__btn-exit" onClick={logout}>Выйти из аккаунта</button>
           </Link>
         </div>
-      </main>
+      </section>
     </div>
   )
 }

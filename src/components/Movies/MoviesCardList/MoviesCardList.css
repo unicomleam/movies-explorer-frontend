@@ -10,7 +10,7 @@
   grid-template-columns: repeat(auto-fit, 300px);
   grid-template-rows: minmax(271px);
   justify-content: center;
-  gap: 16px;
+  gap: 35px;
   list-style: none;
 }
 
@@ -41,7 +41,7 @@
 
 @media screen and (min-width: 768px) {
   .movies-card {
-    margin: 80px 30px 80px 30px;
+    margin: 80px 30px 241px 30px;
   }
 
   .movies-card__more-btn {
@@ -49,10 +49,10 @@
   }
 
   .movies-card__list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: minmax(309px);
-    column-gap: 24px;
-    row-gap: 35px;
+    column-gap: 35px;
+    row-gap: 43px;
   }
 }
 

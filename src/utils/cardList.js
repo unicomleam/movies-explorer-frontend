@@ -38,6 +38,19 @@ export const cardList = [
     nameRU: 'Джентльмены',
     nameEN: "The Gentlemen",
   },
+  {
+    country: 'США',
+    director: 'Гай Ричи',
+    duration: 110,
+    year: 2019,
+    description: 'Один ушлый американец ещё со студенческих лет приторговывал наркотиками, а теперь придумал схему нелегального обогащения с использованием поместий обедневшей английской аристократии и очень неплохо на этом разбогател.',
+    image: 'https://pic.rutubelist.ru/video/9c/e5/9ce537c862468b08e8e22506613415c0.jpg',
+    trailerLink: 'https://link.ru',
+    thumbnail: 'https://link.ru',
+    movieId: 3,
+    nameRU: 'Джентльмены',
+    nameEN: "The Gentlemen",
+  },
 ];
 
 export const saveCardList = [
