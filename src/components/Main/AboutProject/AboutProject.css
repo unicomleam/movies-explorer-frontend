@@ -82,13 +82,13 @@
 
 @media screen and (min-width: 768px) {
   .aboutProject {
-    margin: 90px 50px;
+    margin: 91px 50px;
   }
 
   .aboutProject__list {
-    padding-top: 67px;
+    padding-top: 71px;
     flex-direction: row;
-    gap: 30px;
+    gap: 36px;
   }
 
   .aboutProject__title {
@@ -103,7 +103,7 @@
   }
 
   .aboutProject__description {
-    padding-bottom: 24px;
+    padding-bottom: 22px;
     font-size: 22px;
     line-height: 27px;
   }
@@ -127,12 +127,12 @@
 
 @media screen and (min-width: 1280px) {
   .aboutProject {
-    margin: 110px auto 111px;
+    margin: 113px 50px 101px;
     grid-column: 2/3;
   }
 
   .aboutProject__list {
-    gap: 40px;
+    gap: 53px;
   }
 
   .aboutProject__text {

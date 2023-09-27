@@ -71,23 +71,24 @@
 
 .card__btn_type_delete {
   background-color: #313131;
-  width: 22px;
+  width: 21px;
 	height: 21px;
   background-image: url('../../../images/movie/icon-delete.svg');
-  background-size: 8px 8px;
   background-repeat: no-repeat;
   background-position: center;
   transition: background-size .2s ease-out;
 }
 
 .card__btn_type_delete:hover {
-  background-size: 10px 10px;
+  background-size: 8px 8px;
+  width: 22px;
+	height: 22px;
 }
 
 .card__btn_saved {
   background-color: #EE3465;
   background-image: url('../../../images/movie/icon-save.svg');
-  width: 22px;
+  width: 21px;
 	height: 21px;
   background-repeat: no-repeat;
   background-position: center;
@@ -114,6 +115,7 @@
 
   .card__btn {
     display: none;
+    top: 11px;
   }
 
   .card__image_container:hover .card__btn {
@@ -124,5 +126,9 @@
 @media screen and (min-width: 1280px) {
   .card__image {
     height: 201px;
+  }
+
+  .card__header {
+    padding: 10px 15px 0;
   }
 }

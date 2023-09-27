@@ -19,7 +19,7 @@ function Footer() {
             </a>
           </li>
         </ul>
-        <p className="footer__year">&copy;{getYear()}</p>
+        <p className="footer__year">&copy; {getYear()}</p>
       </div>
     </footer>
   )

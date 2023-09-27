@@ -32,5 +32,6 @@
   .main {
     margin: 0 auto;
     grid-column: 2/3;
+    min-height: 97.5vh;
   }
 }

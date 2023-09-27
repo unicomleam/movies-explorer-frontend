@@ -2,7 +2,6 @@
   margin: 14px 14px 0 14px;
   background-color: #272727;
   border-radius: 10px;
-  max-width: 1200px;
 }
 
 .promo__title {
@@ -17,7 +16,7 @@
 
 @media screen and (min-width: 768px) {
   .promo {
-    margin: 20px 20px 0 20px;
+    margin: 25px 20px 0;
   }
 
   .promo__title {
@@ -29,8 +28,9 @@
 
 @media screen and (min-width: 1280px) {
   .promo {
-    margin: 40px auto 0;
+    margin-top: 40px;
     grid-column: 2/3;
+    max-width: 1200px;
   }
 
   .promo__title {

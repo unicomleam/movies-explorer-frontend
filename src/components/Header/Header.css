@@ -99,7 +99,7 @@
 .header__entrance {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 14px;
 }
 
 .header__link {
@@ -161,6 +161,10 @@
     padding: 8px 20px;
     font-size: 12px;
     line-height: 16px;
+  }
+
+  .header__entrance {
+    gap: 30px;
   }
 }
 

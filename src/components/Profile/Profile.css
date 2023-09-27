@@ -101,7 +101,7 @@
 
 @media screen and (min-width: 768px) {
   .profile {
-    margin: 198px auto 0;
+    margin: 209px auto 0;
     width: 410px;
   }
 
@@ -122,6 +122,7 @@
 @media screen and (min-width: 1280px) {
   .profile {
     padding: 0;
+    margin: 71px auto 0;
     grid-column: 2/3;
   }
 

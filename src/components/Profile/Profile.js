@@ -19,7 +19,8 @@ function Profile({ logout }) {
     <div className="page page_full-heigth">
       <Header theme={{ default: false }} />
 
-      <section className="profile">
+      <main className='profile'>
+      <section>
         <h1 className="profile__title">{`Привет, ${name}!`}</h1>
         <form id="profile__form" className="profile__form" onSubmit={handleSubmit}>
           <label className="profile__input-container">
@@ -56,6 +57,7 @@ function Profile({ logout }) {
           </Link>
         </div>
       </section>
+      </main>
     </div>
   )
 }

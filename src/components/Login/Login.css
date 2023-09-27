@@ -1,5 +1,5 @@
 .login-form {
-  margin: 42px 30px 30px 30px;
+  margin: 33px 30px 30px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,12 +105,12 @@
 @media screen and (min-width: 768px) {
   .login-form {
     width: 456px;
-    margin: 232px auto 40px;
+    margin: 215px auto 40px;
     align-items: flex-start;
   }
 
   .login-form__title {
-    margin-top: 40px;
+    margin-top: 25px;
     padding: 0 30px;
   }
 
@@ -132,6 +132,16 @@
     font-size: 14px;
     line-height: 17px;
   }
+
+  .login-form__transition-text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .login-form__transition-link {
+    font-size: 14px;
+    line-height: 17px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -142,6 +152,7 @@
   }
 
   .login-form__title {
+    margin-top: 40px;
     padding: 0;
   }
 
