@@ -168,7 +168,7 @@
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 990px) {
   .header__overlay {
     display: none;
   }
@@ -180,9 +180,13 @@
 
 @media screen and (min-width: 1280px) {
   .header {
-    min-width: 1140px;
+    min-width: 92%;
     margin: 18px auto 0;
     padding: 0;
     grid-column: 2/3;
+  }
+
+  .header_form {
+    margin: 18px 0 0;
   }
 }

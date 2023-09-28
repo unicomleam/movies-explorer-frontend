@@ -1,5 +1,4 @@
 .aboutMe {
-  max-width: 1140px;
   margin: 70px 14px 0 14px;
 }
 
@@ -137,6 +136,7 @@
 
 @media screen and (min-width: 1280px) {
   .aboutMe {
+    max-width: 1140px;
     margin: 110px auto 0;
     grid-column: 2/3;
   }

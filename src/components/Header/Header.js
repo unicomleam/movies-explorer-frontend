@@ -12,7 +12,7 @@ function Header({ theme }) {
   }
 
   return (
-    <header className="header">
+    <header className={`header ${theme.default ? 'header_form' : ''}`}>
       <Link to="/" className="header__logo"/>
       { !theme.default && ( loggeIn
         ? <div>

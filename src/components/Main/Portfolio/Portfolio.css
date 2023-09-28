@@ -1,6 +1,5 @@
 .portfolio {
   margin: 70px 14px 138px 14px;
-  max-width: 1140px;
 }
 
 .portfolio__line {
@@ -80,6 +79,7 @@
 
 @media screen and (min-width: 1280px) {
   .portfolio {
+    max-width: 1140px;
     margin: 100px auto 103px;
     grid-column: 2/3;
   }
