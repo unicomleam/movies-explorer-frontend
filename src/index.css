@@ -1,0 +1,37 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/font.css);
+
+@import url(./components/App/App.css);
+@import url(./components/Header/Header.css);
+@import url(./components/Main/AboutMe/AboutMe.css);
+@import url(./components/Main/AboutProject/AboutProject.css);
+@import url(./components/Main/NavTab/NavTab.css);
+@import url(./components/Main/Portfolio/Portfolio.css);
+@import url(./components/Main/Promo/Promo.css);
+@import url(./components/Main/Techs/Techs.css);
+@import url(./components/Footer/Footer.css);
+
+@import url(./components/Navigation/Navigation.css);
+@import url(./components/Movies/MoviesCard/MoviesCard.css);
+@import url(./components/Movies/MoviesCardList/MoviesCardList.css);
+@import url(./components/Movies/SearchForm/SearchForm.css);
+
+@import url(./components/Login/Login.css);
+@import url(./components/Register/Register.css);
+@import url(./components/Profile/Profile.css);
+@import url(./components/NotFound/NotFound.css);
+
+body {
+  font-family: "Inter", "Helvetica Neue", arial, sans-serif;
+  color: #fff;
+  background-color: #202020;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}

@@ -1,0 +1,37 @@
+.page {
+  display: grid;
+}
+
+.main {
+  display: block;
+  min-height: 88vh;
+}
+
+.page_full-heigth {
+  height: 100vh;
+  grid-template-rows: auto 1fr;
+}
+  
+.page_full-heigth-1row {
+  height: 100vh;
+  grid-template-rows: 1fr;
+}
+
+.link {
+	cursor: pointer;
+	text-decoration: none;
+  color: #fff;
+}
+  
+@media screen and (min-width: 1280px) {
+  .page {
+    grid-auto-flow: column;
+    grid-template-columns: minmax(20px, 1fr) minmax(1140px, 1280px) minmax(20px, 1fr);
+  }
+
+  .main {
+    margin: 0 auto;
+    grid-column: 2/3;
+    min-height: 97.5vh;
+  }
+}
