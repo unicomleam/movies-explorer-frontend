@@ -31,6 +31,7 @@
 
   .main {
     margin: 0 auto;
+    min-width: 1140px;
     grid-column: 2/3;
     min-height: 97.5vh;
   }

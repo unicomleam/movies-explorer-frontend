@@ -38,6 +38,14 @@
   color: #8B8B8B;
 }
 
+.movies-card__error {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+}
+
 @media screen and (min-width: 768px) {
   .movies-card {
     margin: 80px 30px 241px 30px;

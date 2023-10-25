@@ -1,26 +1,20 @@
-import MoviesCard from "../MoviesCard/MoviesCard"
+import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList({ cardList, typeCardBtn }) {
+function MoviesCardList({ movies, handleToggleSave, saveMovies, viewMode }) {
 
   return(
     <section className="movies-card">
       <ul className="movies-card__list">
-        {cardList.map(card => (
+				{movies.map((movie) => (
           <MoviesCard
-            key={card.movieId}
-            movieId={card.movieId}
-            duration={card.duration}
-            image={card.image}
-            name={card.nameRU}
-            typeCardBtn={typeCardBtn}
+            key={movie.reactKey}
+            movie={movie}
+            handleToggleSave={handleToggleSave}
+            saveMovies={saveMovies}
+            viewMode={viewMode}
           />
         ))}
       </ul>
-      {cardList.length > 3 &&
-        <div className="movies-card__more">
-          <button type='button' className="movies-card__more-btn">Ещё</button>
-        </div>
-      }
     </section>
   )
 }

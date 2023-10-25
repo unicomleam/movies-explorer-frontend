@@ -1,19 +1,59 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import Header from '../Header/Header';
-import { Link } from "react-router-dom";
+import useValidation from "../hook/validation";
+import auth from '../../utils/Auth';
 
-function Profile({ logout }) {
+function Profile({ isLoad, setIsLoad, setCurrentUser, navigate, setClearValues }) {
   const { name, email } = useContext(CurrentUserContext);
+  const [ responseError, setResponseError ] = useState(null);
+  const [ responseSuccess, setResponseSuccess ] = useState(null);
+  const {
+    values,
+    setValues,
+    errors,
+    isValid,
+    setIsValid,
+    handleChange,
+  } = useValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('submit');
-  }
+    setIsLoad(true);
 
-  function handleChange() {
-    console.log('yes change');
-  }
+    console.log({ name: values['name'], email: values['email'], });
+
+    auth.updateUserInfo({ name: values['name'], email: values['email'], })
+      .then(data => {
+        setCurrentUser({ ...data, loggeIn: true })
+        setResponseSuccess('Данные изменены')
+        setIsValid(true)
+      })
+      .catch(err => { setResponseError('Пользователь с таким email уже зарегистрирован') })
+      .finally(() => setIsLoad(false));
+  };
+
+  const handleLogout = () => {
+      setClearValues();
+      navigate("/", {replace: true});
+  };
+
+  useEffect(() => {
+    if (name === values['name'] && email === values['email']) {
+      console.log(name, values['name'], email, values['email']);
+      setIsValid(false);
+    }
+  }, [values]);
+
+  useEffect(() => {
+    if (name && email) {
+      setValues({
+        name: name,
+        email: email,
+      });
+      console.log(values)
+    }
+  }, [name, email, setValues]);
 
   return (
     <div className="page page_full-heigth">
@@ -28,10 +68,10 @@ function Profile({ logout }) {
             <input
               type="text"
               placeholder="Введите имя"
-              name="profile-input-name"
+              name="name"
               id="profile-input-name"
-              className="profile__input"
-              value={name}
+              className={`profile__input ${errors.name ? 'profile__input_error' : ''}`}
+              value={values?.name || ''}
               minLength={2}
               maxLength={30}
               onChange={handleChange}/>
@@ -42,19 +82,21 @@ function Profile({ logout }) {
             <input
               type="email"
               placeholder="Введите почту"
-              name="profile-input-name"
+              name="email"
+              pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
               id="profile-input-name"
-              className="profile__input"
-              value={email}
+              className={`profile__input ${errors.email ? 'profile__input_error' : ''}`}
+              value={values?.email || ''}
               onChange={handleChange}/>
           </label>
+          <span className={`profile__result ${responseSuccess ? 'profile__result_success' : responseError ? 'profile__result_error' : ''}`}>
+            {(responseSuccess ?? '') || (responseError ?? '')}
+          </span>
         </form>
         <div className="profile__wrapper">
-          <button type="submit" form="profile__form" className="profile__btn-submit">Редактировать</button>
+          <button type="submit" form="profile__form" disabled={(isLoad || !isValid) ? true : false} className="profile__btn-submit">Редактировать</button>
           
-          <Link className='link' to={"/"}>
-            <button type='button' className="profile__btn-exit" onClick={logout}>Выйти из аккаунта</button>
-          </Link>
+          <button type='button' className="profile__btn-exit" onClick={handleLogout}>Выйти из аккаунта</button>
         </div>
       </section>
       </main>

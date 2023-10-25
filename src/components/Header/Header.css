@@ -180,7 +180,7 @@
 
 @media screen and (min-width: 1280px) {
   .header {
-    min-width: 92%;
+    min-width: 90%;
     margin: 18px auto 0;
     padding: 0;
     grid-column: 2/3;
