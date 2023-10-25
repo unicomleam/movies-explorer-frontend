@@ -19,11 +19,11 @@ function Movies({ isLoad, setIsLoad, saveMovies, handleToggleSave }) {
 		let initialCount;
 		let extraCount;
 
-		if (width > 1280) {
+		if (width >= 1024) {
 			initialCount = 12;
 			extraCount = 3;
 		} else {
-			if (width > 768 && width <= 1280) {
+			if (width >= 655 && width < 1024) {
 				initialCount = 8;
 				extraCount = 2;
 			} else {

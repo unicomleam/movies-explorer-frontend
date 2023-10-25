@@ -18,10 +18,8 @@ function Login({ isLoad, setIsLoad, setCurrentUser, navigate, requestError, setR
       .then(data => {
         const { name, email, _id } = data;
         if (_id) {
-          localStorage.setItem('uI', data._id);
           localStorage.setItem('jwt', data.token);
           setCurrentUser(oldState => ({ name, email, loggeIn: true }));
-          console.log(localStorage.getItem('jwt'));
           navigate('/movies');
           e.target.reset();
         };
