@@ -23,32 +23,31 @@ function App() {
   const [ isLoad, setIsLoad ] = useState(false);
   const [ saveMovies, setSaveMovies ] = useState([]);
   const [ requestError, setRequestError ] = useState(null);
+  const jwt = localStorage.getItem('jwt');
 
   useEffect(() => {
-    function tokenCheck() {
-      const jwt = localStorage.getItem('jwt');
-      if (jwt) {
-        return auth.getUserInfo(jwt).then(userInfo => {
-          setCurrentUser({ ...userInfo, loggeIn: true }); 
+    if (jwt) {
+      setIsLoad(true)
+
+      Promise.all([mainApi.getAllSavedMovies(), auth.getUserInfo()])
+        .then(res => {
+          const [ apiSavedMovie, apiUserInfo ] = res;
+
+          setSaveMovies(apiSavedMovie);
+
+          return apiUserInfo
         })
-        .catch(console.error);
-      }
+        .then(apiUserInfo => {
+          setCurrentUser({ ...apiUserInfo, loggeIn: true });
+        })
+        .catch(localStorage.removeItem(jwt))
+        .finally(() => setIsLoad(false))
     }
-    tokenCheck();
-    loadSavedMovies();
-  }, [])
+  }, [jwt])
 
   const handleToggleIsLoad = (value) => {
     setIsLoad(value);
   }
-
-  function loadSavedMovies() {
-		mainApi.getAllSavedMovies()
-			.then((moviesResponse) => {
-				setSaveMovies(moviesResponse);
-			})
-			.catch((err) => console.log(err));
-	}
 
   function handleToggleSave(movie) {
 		if (!isMovieSaved(movie, saveMovies)) {

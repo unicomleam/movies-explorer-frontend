@@ -10,12 +10,13 @@ import moviesApi from '../../utils/MoviesApi';
 function Movies({ isLoad, setIsLoad, saveMovies, handleToggleSave }) {
   const [serverResponseError, setServerResponseError] = useState(false);
 	const [searchData, setSearchData] = useState({});
-	const [maximunCardCount, setMaximunCardCount] = useState(getRenderMoviesOptions().initialCount);
 	const [isEmptyInput, setIsEmptyInput] = useState(false);
 	const [isFirstVisit, setIsFirstVisit] = useState(true);
+  const [maximunCardCount, setMaximunCardCount] = useState(getRenderMoviesOptions().initialCount);
+  const [searchString, setSearchString] = useState('');
 
   function getRenderMoviesOptions() {
-		const width = window.innerWidth
+    const width = window.innerWidth;
 		let initialCount;
 		let extraCount;
 
@@ -40,6 +41,23 @@ function Movies({ isLoad, setIsLoad, saveMovies, handleToggleSave }) {
 		};
 		setIsFirstVisit(localStorage.getItem('firstVisit', 'true'));
 	}, []);
+
+  useEffect(() => {
+    let resizeTimeout;
+
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => setMaximunCardCount(getRenderMoviesOptions().initialCount), 500);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearTimeout(resizeTimeout);
+      window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
 	function moviesToRender() {
 		const result = (searchData.searchResult ?? []).slice(0, maximunCardCount);
@@ -97,8 +115,8 @@ function Movies({ isLoad, setIsLoad, saveMovies, handleToggleSave }) {
       <main className="main">
         <SearchForm
           onSearch={handleSearch}
-          searchString={searchData.searchString ?? ""}
-			    onlyShortMovies={searchData.onlyShortMovies ?? ""}
+          searchString={searchString}
+          setSearchString={setSearchString}
 		      viewMode="allMovies"
 					isEmptyInput={isEmptyInput}
 					onEmptyInput={setIsEmptyInput}

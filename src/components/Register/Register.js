@@ -19,10 +19,10 @@ function Register({ isLoad, setCurrentUser, setIsLoad, navigate, requestError, s
       .then(() => {
         return auth.loginUser(userData)})
       .then(data => {
+        localStorage.setItem('jwt', data.token);
         const { name, email, _id } = data;
 
         if (_id) {
-          localStorage.setItem('jwt', data.token);
           setCurrentUser(oldState => ({ name, email, loggeIn: true }));
           navigate('/movies');
         };
@@ -83,7 +83,7 @@ function Register({ isLoad, setCurrentUser, setIsLoad, navigate, requestError, s
                 : ""
                 ? requestError
                 : requestError
-            }
+              }
             </span>
           </div>
         </form>

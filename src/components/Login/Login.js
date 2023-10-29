@@ -16,16 +16,16 @@ function Login({ isLoad, setIsLoad, setCurrentUser, navigate, requestError, setR
     setIsLoad(true);
     auth.loginUser(userData)
       .then(data => {
+        localStorage.setItem('jwt', data.token);
         const { name, email, _id } = data;
         if (_id) {
-          localStorage.setItem('jwt', data.token);
           setCurrentUser(oldState => ({ name, email, loggeIn: true }));
           navigate('/movies');
           e.target.reset();
         };
       })
       .catch(() => setRequestError('Неверный email или пароль'))
-      .finally(() => setIsLoad(false));
+      .finally(() => { setIsLoad(false) });
   };
 
   const handleSubmitForm = (e) => {

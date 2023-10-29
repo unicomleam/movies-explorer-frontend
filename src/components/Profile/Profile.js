@@ -21,8 +21,6 @@ function Profile({ isLoad, setIsLoad, setCurrentUser, navigate, setClearValues }
     e.preventDefault();
     setIsLoad(true);
 
-    console.log({ name: values['name'], email: values['email'], });
-
     auth.updateUserInfo({ name: values['name'], email: values['email'], })
       .then(data => {
         setCurrentUser({ ...data, loggeIn: true })
@@ -40,7 +38,6 @@ function Profile({ isLoad, setIsLoad, setCurrentUser, navigate, setClearValues }
 
   useEffect(() => {
     if (name === values['name'] && email === values['email']) {
-      console.log(name, values['name'], email, values['email']);
       setIsValid(false);
     }
   }, [values]);
@@ -51,7 +48,6 @@ function Profile({ isLoad, setIsLoad, setCurrentUser, navigate, setClearValues }
         name: name,
         email: email,
       });
-      console.log(values)
     }
   }, [name, email, setValues]);
 
