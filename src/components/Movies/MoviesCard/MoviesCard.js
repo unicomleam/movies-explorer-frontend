@@ -1,33 +1,44 @@
-import { saveCardList } from '../../../utils/cardList';
-import { Link } from 'react-router-dom';
+import {isMovieSaved} from '../../../utils/filmFunction';
 
-function MoviesCard({ movieId, image, name, typeCardBtn }) {
-  const isSavedMovieCard = saveCardList.some(i => i.movieId === movieId);
+function MoviesCard({ movie, handleToggleSave, saveMovies, viewMode }) {
+  const hours = Math.floor(movie.duration / 60);
+  const minutes = movie.duration % 60;
+  let valueBtn = 'Сохранить';
 
+	function btnClassName() {
+		if (viewMode === "allMovies" && isMovieSaved(movie, saveMovies)) {
+      valueBtn = '';
+			return "card__btn_saved";
+		}
+    if (viewMode === "savedMovies") {
+      valueBtn = "";
+      return "card__btn_type_delete"
+    }
+    return '';
+    
+	}
+
+	function handleMovieSave() {
+		handleToggleSave(movie);
+	}
+  
   return (
     <li className="card">
       <div className='card__image_container'>
-        <Link to={'/'} target='_blank'>
-          <img src={image} alt={name} className="card__image" />
-        </Link>
+        <a href={movie.trailerLink} target='_blank' rel="noreferrer">
+          <img src={movie.imageFull} alt={movie.nameRu} className="card__image" />
+        </a>
         <button
           type='button'
-          className={`card__btn ${
-            !typeCardBtn.save
-              ? 'card__btn_type_delete'
-              : isSavedMovieCard
-              ? 'card__btn_saved'
-              : ''
-          }`}>
-          {!typeCardBtn.save || isSavedMovieCard
-            ? ''
-            : 'Сохранить'}
+          onClick={handleMovieSave}
+          className={`card__btn ${btnClassName()}`}>
+          {valueBtn}
         </button>
       </div>
 
       <div className="card__header">
-        <h2 className="card__title">{name}</h2>
-        <p className="card__duration">1ч 36м</p>
+        <h2 className="card__title">{movie.nameRU}</h2>
+        <p className="card__duration">{`${hours}ч ${minutes}м`}</p>
       </div>
     </li>
   )

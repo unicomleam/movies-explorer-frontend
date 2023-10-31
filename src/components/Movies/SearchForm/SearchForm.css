@@ -63,6 +63,10 @@
   padding: 10px 12px;
 }
 
+.search-form__submit-btn:disabled {
+  background-color: #c0c0c033;
+}
+
 .search-form__short-film-text {
   margin: 0;
   font-size: 12px;

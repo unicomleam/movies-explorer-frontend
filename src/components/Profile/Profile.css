@@ -43,6 +43,11 @@
   border: none;
 }
 
+.profile__input_error {
+  color: #FF3055;
+  ;
+}
+
 .profile__input::placeholder {
   font-size: 11px;
   line-height: 13px;
@@ -84,11 +89,16 @@
   color: #8B8B8B;
 }
 
+.profile__btn-submit:disabled {
+  color: #8B8B8B;
+  cursor: auto;
+}
+
 .profile__btn-exit {
   font-size: 12px;
   line-height: 15px;
   font-weight: 500;
-  color: #EE3465;
+  color: #FF3055;
   border: none;
   background-color: inherit;
   cursor: pointer;
@@ -97,6 +107,25 @@
 
 .profile__btn-exit:hover {
   color: #8B8B8B;
+}
+
+.profile__result {
+  margin: 0;
+  padding: 20px 0 0 0;
+  width: 100%;
+  height: 12px;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.profile__result_success {
+  color: #3DDC84;
+}
+
+.profile__result_error {
+  color: #FF3055;
 }
 
 @media screen and (min-width: 768px) {
